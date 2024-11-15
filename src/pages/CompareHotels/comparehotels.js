@@ -16,12 +16,12 @@ const CompareHotels = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const currentResponse = await fetch(`http://localhost:5000/api/hotels/${hotelId}`);
+        const currentResponse = await fetch(`https://hotel-backend-1-8plr.onrender.com/api/hotels/${hotelId}`);
         if (!currentResponse.ok) throw new Error('Failed to fetch current hotel details');
         const currentHotelData = await currentResponse.json();
         setCurrentHotel(currentHotelData);
 
-        const response = await fetch('http://localhost:5000/api/hotels');
+        const response = await fetch('https://hotel-backend-1-8plr.onrender.com/api/hotels');
         if (!response.ok) throw new Error('Failed to fetch hotels');
         const allHotels = await response.json();
 
