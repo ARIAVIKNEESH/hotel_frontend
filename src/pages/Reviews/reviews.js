@@ -9,7 +9,7 @@ function Reviews() {
     const [selectedRating, setSelectedRating] = useState(0);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/feedback")
+        fetch("https://hotel-backend-1-8plr.onrender.com/api/feedback")
             .then(response => response.json())
             .then(data => {
                 setFeedbacks(data);
@@ -53,7 +53,7 @@ function Reviews() {
 
         const token = localStorage.getItem("token");
 
-        fetch("http://localhost:5000/api/feedback", {
+        fetch("https://hotel-backend-1-8plr.onrender.com/api/feedback", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
