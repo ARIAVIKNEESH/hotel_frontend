@@ -1,0 +1,255 @@
+/* Main container for the home page */
+.home-page-container {
+    max-width: 100%;
+    padding: 120px 20px 40px 20px; /* Adjust top padding to account for fixed navbar height */
+    background: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    animation: backgroundMove 30s linear infinite;
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+/* Keyframes for smooth background animation */
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Title of the page */
+.home-page-title {
+    color: #fff;
+    margin-bottom: 40px; /* Increased spacing for better separation */
+    font-size: 3.5rem; /* Slightly larger font size */
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Enhanced text shadow for better readability */
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 500px; /* Increased height for better visual impact */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Individual slides */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Active slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Set image styles */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Container for the content */
+.home-page-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensure responsive layout */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px; /* Added spacing from the title */
+}
+
+/* Fast Facts Section */
+.home-page-fast-facts {
+    width: 100%;
+    max-width: 600px; /* Set a max-width for better readability */
+    padding-right: 20px;
+}
+
+.fast-fact-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Increased spacing */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.fast-fact-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fast-fact-image {
+    width: 140px; /* Slightly larger image area */
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Text within the fast fact box */
+.fast-fact-text {
+    padding: 15px; /* Increased padding for better spacing */
+    flex: 1;
+}
+
+.fast-fact-text h3 {
+    margin: 0;
+    font-size: 1.5rem; /* Larger font size for headers */
+}
+
+.fast-fact-text p {
+    margin: 0;
+    font-size: 1.125rem; /* Slightly larger font size for text */
+}
+
+/* Image section on the right */
+.home-page-images {
+    width: 100%;
+    max-width: 600px; /* Set a max-width for better readability */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 20px; /* Space between images */
+}
+
+/* Each image block */
+.home-page-images .slide {
+    width: 100%;
+    height: 400px; /* Set a fixed height for each image */
+    background-size: cover; /* Ensure image covers the container */
+    background-position: center; /* Center the image */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for better appearance */
+}
+
+/* Ensure no repeated images */
+.home-page-images img {
+    display: block; /* Ensures the images are block elements */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* FAQ Section */
+.home-page-faq-title {
+    color: #333;
+    margin-top: 60px; /* Increased spacing for better separation */
+    font-size: 2.25rem; /* Larger font size */
+}
+
+.home-page-faq-section {
+    margin-top: 30px; /* Increased spacing */
+    background-color: #f9f9f9; /* Light background for the FAQ section */
+    padding: 20px; /* Increased padding */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.home-page-faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.home-page-faq-question {
+    cursor: pointer;
+    background-color: #fff;
+    padding: 15px; /* Increased padding */
+    font-size: 1.125rem; /* Slightly larger font size */
+}
+
+.home-page-faq-answer {
+    display: none;
+    padding: 15px; /* Increased padding */
+}
+
+.home-page-faq-item.active .home-page-faq-answer {
+    display: block;
+}
+
+.home-page-faq-toggle {
+    font-size: 1.5rem; /* Larger toggle icon */
+}
+
+/* Testimonials Section */
+.home-page-testimonials {
+    margin-top: 60px; /* Increased spacing */
+}
+
+.testimonial-card {
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners */
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    padding: 20px; /* Increased padding */
+}
+
+.testimonial-review {
+    font-size: 1.25rem; /* Larger font size for better readability */
+    font-style: italic;
+}
+
+.testimonial-name {
+    font-size: 1.125rem; /* Larger font size */
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Call to Action Section */
+.home-page-cta {
+    margin-top: 60px; /* Increased spacing */
+    padding: 30px; /* Increased padding */
+    background-color: #fff; /* White background for the CTA section */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.home-page-cta-button {
+    font-size: 1.25rem; /* Larger button text */
+}
+
+/* Animation for fading in the title */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.button {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: rgb(0 107 179);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 3px solid #ffffff4d;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  
+  .button:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+  }
+  
