@@ -5,7 +5,6 @@ import './bookingform.css';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-// Your Stripe public key (replace with your own key)
 const stripePromise = loadStripe('pk_test_51QLT1nEoMppwEzq5oA0znkEB41YaZyJX24of8UslKOxDQTVWaLhgXIJjfvcpGDIhzFAVAldcdtiOAjeJjVRU9Fn200eOw191aq');
 
 const BookingForm = () => {
@@ -100,7 +99,7 @@ const BookingForm = () => {
       };
 
       try {
-        const response = await fetch('http://localhost:5000/api/bookings', {
+        const response = await fetch('https://hotel-backend-1-8plr.onrender.com/api/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -143,7 +142,6 @@ const BookingForm = () => {
         setError(err.message);
       }
     } else {
-      // If pay at hotel, directly confirm the booking and add it to the database
       const bookingDetails = {
         ...formData,
         hotelName,
@@ -152,7 +150,7 @@ const BookingForm = () => {
       };
 
       try {
-        const response = await fetch('http://localhost:5000/api/bookings', {
+        const response = await fetch('https://hotel-backend-1-8plr.onrender.com/api/bookings', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
