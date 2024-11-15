@@ -10,7 +10,7 @@ const Rooms = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/hotels');
+        const response = await fetch('https://hotel-backend-1-8plr.onrender.com/api/hotels');
         const data = await response.json();
         setHotels(data);
       } catch (error) {
