@@ -17,7 +17,7 @@ const RoomDetails = () => {
   useEffect(() => {
     const fetchHotelDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/hotels/${id}`);
+        const response = await fetch(`https://hotel-backend-1-8plr.onrender.com/api/hotels/${id}`);
         if (!response.ok) throw new Error('Failed to fetch hotel details');
         const data = await response.json();
         setHotel(data);
@@ -31,7 +31,7 @@ const RoomDetails = () => {
   const handleAddReview = async () => {
     if (!reviewText) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/hotels/${id}/reviews`, {
+      const response = await fetch(`https://hotel-backend-1-8plr.onrender.com/api/hotels/${id}/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
