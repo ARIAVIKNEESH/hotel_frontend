@@ -36,7 +36,9 @@ function App() {
       <Routes>
         {!isLoggedIn ? (
           <>
+          
             <Route path="/" element={<Login onLogin={handleLogin} />} />
+          <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<Navigate to="/" />} />
           </>
