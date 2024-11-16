@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar/navbar';
@@ -49,8 +48,6 @@ function App() {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/comparehotels" element={<CompareHotels />} />
             <Route path="/room/:id" element={<RoomDetails />} />
-            
-            {/* Wrap BookingForm with Elements provider */}
             <Route 
               path="/bookingform" 
               element={
