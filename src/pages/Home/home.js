@@ -19,7 +19,6 @@ function Home() {
   ];
 
   useEffect(() => {
-    // Initialize Fast Facts data
     setFastFacts([
       { label: "Accommodations", value: "1,948 Properties" },
       { label: "Popular hotel", value: "Ibis Amsterdam Centre" },
@@ -29,7 +28,6 @@ function Home() {
       { label: "Reasons to visit", value: "Museum & Arts, Sightseeing, Culture" }
     ]);
 
-    // Initialize FAQ data
     setFaqs([
       {
         question: "What will happen after I sign up?",
@@ -57,14 +55,12 @@ function Home() {
       }
     ]);
 
-    // Initialize Testimonials data
     setTestimonials([
       { name: "Aria", review: "Amazing service and a great stay at the hotel!" },
       { name: "Akhil", review: "Booking process was smooth and the hotel exceeded expectations." },
       { name: "Tharun", review: "Great support and wonderful accommodation choices." }
     ]);
 
-    // Automatically cycle images every 3 seconds
     const imageCycle = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
     }, 3000);
@@ -81,7 +77,6 @@ function Home() {
       <h1 className="home-page-title display-4 text-center">Welcome to Our Hotel Booking Service</h1>
 
       <div className="home-page-content">
-        {/* Fast Facts Section */}
         <div className="home-page-fast-facts">
           {fastFacts.map((fact, index) => (
             <div key={index} className="fast-fact-box">
