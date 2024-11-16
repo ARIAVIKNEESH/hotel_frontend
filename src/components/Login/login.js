@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -69,8 +70,8 @@ const Login = ({ onLogin }) => {
           </button>
         </form>
         <p className="login-footer">
-          Don't have an account? <a href="/signup">Sign up here</a>.
-        </p>
+  Don't have an account? <Link to="/signup">Sign up here</Link>.
+</p>
       </div>
     </div>
   );
