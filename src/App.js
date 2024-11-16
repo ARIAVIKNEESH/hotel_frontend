@@ -17,29 +17,26 @@ import { Elements } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe('pk_test_51QLT1nEoMppwEzq5oA0znkEB41YaZyJX24of8UslKOxDQTVWaLhgXIJjfvcpGDIhzFAVAldcdtiOAjeJjVRU9Fn200eOw191aq');
 
 function App() {
-  // Function to handle logout, remove token and user info, and navigate to login page
   const handleLogout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('userName'); // Optionally remove user info
-    window.location.href = '/login'; // Redirect to login page after logout
+    localStorage.removeItem('userName');
+    window.location.href = '/'; 
   };
-
-  // Check if token exists in localStorage
+=
   const token = localStorage.getItem('token');
 
   return (
     <Router>
       {token && <Navbar onLogout={handleLogout} />}
       <Routes>
-        {/* Routes for login/signup before authentication */}
         {!token ? (
           <>
-            <Route path="/" element={<Signup />} />
-            <Route path="/login" element={<Login />} />{/* Redirect invalid paths to login */}
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </>
         ) : (
           <>
-            {/* Routes for authenticated users */}
             <Route path="/home" element={<Home />} />
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/about" element={<About />} />
@@ -55,7 +52,7 @@ function App() {
               } 
             />
             <Route path="/my-bookings" element={<MyBookings />} />
-            <Route path="*" element={<Navigate to="/home" />} /> {/* Redirect invalid paths to home */}
+            <Route path="*" element={<Navigate to="/home" />} />
           </>
         )}
       </Routes>
