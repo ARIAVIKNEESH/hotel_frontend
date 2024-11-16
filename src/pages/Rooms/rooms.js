@@ -71,7 +71,6 @@ const Rooms = () => {
         </div>
       </div>
 
-      {/* Hotels Display Section */}
       <div className="row">
         {filteredHotels.map(hotel => (
           <div key={hotel._id} className="col-md-4 mb-4">
