@@ -5,7 +5,6 @@ import { Elements, CardElement, useStripe, useElements } from "@stripe/react-str
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./bookingform.css";
 
-// Replace this with your own Stripe public key
 const stripePromise = loadStripe("pk_test_51QLT1nEoMppwEzq5oA0znkEB41YaZyJX24of8UslKOxDQTVWaLhgXIJjfvcpGDIhzFAVAldcdtiOAjeJjVRU9Fn200eOw191aq");
 
 const BookingForm = () => {
@@ -114,7 +113,6 @@ const BookingForm = () => {
       const data = await response.json();
       alert(`Booking confirmed! Total rate: $${data.rate}`);
 
-      // Download booking details as JSON
       const blob = new Blob([JSON.stringify(bookingDetails, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
