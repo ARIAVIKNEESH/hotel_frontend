@@ -1,0 +1,152 @@
+/* Body */
+.mybookings-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.mybookings-hr {
+  height: 1px;
+  background-color: rgba(16, 86, 82, 0.75);
+  border: none;
+}
+
+.mybookings-card {
+  width: 100%;
+  max-width: 400px;
+  background: rgb(255, 250, 235);
+  box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 47px 47px rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mybookings-title {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid rgba(16, 86, 82, 0.75);
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  height: 40px;
+}
+
+/* Cart Steps */
+.mybookings-cart .mybookings-steps {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.mybookings-cart .mybookings-steps .mybookings-step {
+  display: grid;
+  gap: 10px;
+}
+
+.mybookings-cart .mybookings-steps .mybookings-step span,
+.mybookings-cart .mybookings-steps .mybookings-step p {
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+}
+
+.mybookings-cart .mybookings-steps .mybookings-step p {
+  font-size: 11px;
+}
+
+/* Promo */
+.mybookings-promo form {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  gap: 10px;
+  padding: 0;
+}
+
+.mybookings-input_field {
+  width: 100%;
+  height: 36px;
+  padding-left: 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(16, 86, 82);
+  background-color: rgb(251, 243, 228);
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.mybookings-input_field:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px rgb(251, 243, 228);
+  background-color: rgb(201, 193, 178);
+}
+
+.mybookings-promo form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  background: rgba(16, 86, 82, 0.75);
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  font-size: 12px;
+  color: #000;
+  transition: background 0.3s;
+}
+
+.mybookings-promo form button:hover {
+  background: rgba(16, 86, 82, 1);
+}
+
+/* Checkout */
+.mybookings-payments .mybookings-details {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+  gap: 5px;
+}
+
+.mybookings-payments .mybookings-details span:nth-child(odd) {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+}
+
+.mybookings-payments .mybookings-details span:nth-child(even) {
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+}
+
+.mybookings-checkout .mybookings-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(16, 86, 82, 0.5);
+}
+
+.mybookings-price {
+  font-size: 22px;
+  color: #2B2B2F;
+  font-weight: 900;
+}
+
+.mybookings-checkout .mybookings-checkout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 36px;
+  background: rgba(16, 86, 82, 0.55);
+  box-shadow: 0 0.5px 0.5px rgba(16, 86, 82, 0.75);
+  border-radius: 7px;
+  border: 1px solid rgb(16, 86, 82);
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.mybookings-checkout .mybookings-checkout-btn:hover {
+  background: rgba(16, 86, 82, 0.7);
+  box-shadow: 0 1px 1px rgba(16, 86, 82, 0.75);
+}

@@ -1,0 +1,47 @@
+/* Navbar Brand (Logo) */
+.navbar-brand {
+    color: #f39c12 !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #ffbf47 !important;
+  }
+  
+  /* Navbar Links */
+  .nav-link {
+    color: #ecf0f1 !important; /* Light gray */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #f39c12 !important; /* Orange on hover */
+  }
+  
+  /* Logout Button */
+  .btn-danger {
+    color: #ffffff !important; /* White text */
+    background-color: #e74c3c !important; /* Red background */
+    border: none;
+    padding: 5px 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b !important; /* Darker red on hover */
+    transform: scale(1.05); /* Slight grow effect */
+  }
+  
+  /* Navbar Toggle Button */
+  .navbar-toggler {
+    border-color: transparent;
+    color: #f39c12 !important;
+  }
+  
+  .navbar-toggler:hover {
+    color: #ffbf47 !important;
+  }
+  
