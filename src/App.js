@@ -38,7 +38,6 @@ function App() {
           <>
             <Route path="/" element={<Login onLogin={handleLogin} />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="*" element={<Navigate to="/" />} />
           </>
         ) : (
           <>
