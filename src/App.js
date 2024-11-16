@@ -17,12 +17,14 @@ import { Elements } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe('pk_test_51QLT1nEoMppwEzq5oA0znkEB41YaZyJX24of8UslKOxDQTVWaLhgXIJjfvcpGDIhzFAVAldcdtiOAjeJjVRU9Fn200eOw191aq');
 
 function App() {
+  // Function to handle logout, remove token and user info, and navigate to login page
   const handleLogout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('userName');
-    window.location.href = '/'; 
+    localStorage.removeItem('userName'); // Optionally remove user info
+    window.location.href = '/'; // Redirect to login page after logout
   };
-=
+
+  // Check if token exists in localStorage
   const token = localStorage.getItem('token');
 
   return (
