@@ -1,4 +1,3 @@
-// src/pages/RoomDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -87,7 +86,6 @@ const RoomDetails = () => {
         ))}
       </div>
 
-      {/* Room and Booking Information */}
       <div className="card mb-5 shadow-sm">
         <div className="card-body">
           <h3 className="card-title">Room Types</h3>
@@ -104,7 +102,6 @@ const RoomDetails = () => {
         </div>
       </div>
 
-      {/* Reviews Section */}
       <div className="card mb-5 shadow-sm">
         <div className="card-body">
           <h3 className="card-title">Reviews</h3>
@@ -127,7 +124,6 @@ const RoomDetails = () => {
         </div>
       </div>
 
-      {/* Action Buttons */}
       <div className="d-flex justify-content-center gap-3">
         <button onClick={handleBookNow} className="book-button">Book Now</button>
         <button onClick={handleCompareNow} className="compare-button">Compare Now</button>
