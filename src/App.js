@@ -19,15 +19,23 @@ const stripePromise = loadStripe('pk_test_51QLT1nEoMppwEzq5oA0znkEB41YaZyJX24of8
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Check if the token is present in localStorage and set isLoggedIn accordingly
   useEffect(() => {
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
   }, []);
 
-  const handleLogin = () => setIsLoggedIn(true);
+  // Function to handle login
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  // Function to handle logout, remove token and navigate to login page
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName'); // Optionally remove user info
     setIsLoggedIn(false);
+    window.location.href = '/'; // Redirect to login page after logout
   };
 
   return (
@@ -38,6 +46,7 @@ function App() {
           <>
             <Route path="/" element={<Login onLogin={handleLogin} />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </>
         ) : (
           <>
