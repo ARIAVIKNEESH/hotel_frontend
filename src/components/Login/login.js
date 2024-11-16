@@ -24,12 +24,14 @@ const Login = ({ onLogin }) => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userName', data.name);
         onLogin();
+        window.location.reload();
         navigate('/home');
       } else {
         alert(data.message || 'Login failed');
       }
     } catch (error) {
       console.error('Error logging in:', error);
+      window.location.reload();
       alert('An error occurred. Please try again.');
     }
   };
