@@ -69,7 +69,7 @@ const Login = ({ onLogin }) => {
           </button>
         </form>
         <p className="login-footer">
-          Don't have an account? <a href="/">Sign up here</a>.
+          Don't have an account? <a href="/signup">Sign up here</a>.
         </p>
       </div>
     </div>
