@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar/navbar';
 import Home from './pages/Home/home';
@@ -17,34 +17,21 @@ import { Elements } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe('pk_test_51QLT1nEoMppwEzq5oA0znkEB41YaZyJX24of8UslKOxDQTVWaLhgXIJjfvcpGDIhzFAVAldcdtiOAjeJjVRU9Fn200eOw191aq');
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // Check if the token is present in localStorage and set isLoggedIn accordingly
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setIsLoggedIn(!!token);
-  }, []);
-
-  // Function to handle login
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  // Function to handle logout, remove token and navigate to login page
   const handleLogout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('userName'); // Optionally remove user info
-    setIsLoggedIn(false);
-    window.location.href = '/'; // Redirect to login page after logout
+    localStorage.removeItem('userName');
+    window.location.href = '/'; 
   };
+=
+  const token = localStorage.getItem('token');
 
   return (
     <Router>
-      {isLoggedIn && <Navbar onLogout={handleLogout} />}
+      {token && <Navbar onLogout={handleLogout} />}
       <Routes>
-        {!isLoggedIn ? (
+        {!token ? (
           <>
-            <Route path="/" element={<Login onLogin={handleLogin} />} />
+            <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<Navigate to="/" />} />
           </>
@@ -64,7 +51,6 @@ function App() {
                 </Elements>
               } 
             />
-            
             <Route path="/my-bookings" element={<MyBookings />} />
             <Route path="*" element={<Navigate to="/home" />} />
           </>
