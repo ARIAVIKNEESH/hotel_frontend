@@ -159,8 +159,6 @@ const BookingForm = () => {
           <input type="number" className="form-control mb-3" name="numGuests" value={formData.numGuests} onChange={handleChange} placeholder="Number of Guests" required />
           <select className="form-select mb-3" name="roomType" value={formData.roomType} onChange={handleChange} required>
             <option value="">Select Room Type</option>
-            <option value="Standard">Standard</option>
-            <option value="Deluxe">Deluxe</option>
             <option value="Suite">Suite</option>
           </select>
           <textarea className="form-control mb-3" name="specialRequests" value={formData.specialRequests} onChange={handleChange} placeholder="Special Requests"></textarea>
